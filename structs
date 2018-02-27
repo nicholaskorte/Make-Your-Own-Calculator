@@ -1,0 +1,54 @@
+typedef struct rectangle{
+    int width;
+    int height;
+}rectangle;
+
+//how to use structs
+//use typedef to make using the struct easier to call later on
+//structs basically create a new variable type like INT
+//example from the book
+
+//the enum below is like a possible spectrum of answers that are allowed. no quotes necessary. or allowed
+//this enum says that there can only be 3 types of unit. Count. Pounds. Pints.
+//the enums name is unit_of_measure
+typedef enum {
+    COUNT, POUNDS, PINTS
+} unit_of_measure;
+
+
+//this union(below this comment) will only allow one type of data, the largest one.
+//in this case a float  takes 4 and a short takes 2. so when this union is stored it will make room for 4 bytes of data, instead of 4 + 4 + 2. or 10 bytes
+
+typedef union {
+short amount;
+float weight;
+float volume;
+}quantity;
+
+//the unions name is quantity
+
+typedef struct {
+//these next 2 variable are pointers that will never change. They are also chars. Therefore they are called string literals. Hence the const
+const char *name;
+const char *country;
+//amount is a variable with the type quantity, our union that we just made.
+quantity amount;
+//same with units. but this is linked to our enum
+unit_of_measure units;
+}order;
+//that struct is called fruit_order
+
+//creating a function with the name display. no return type. hence the void
+//the functionn says we are creating a parameter with the name order with the type of fruit_order
+//remember that this is just a function and wont do anything until you call it
+//order is just a parameter not an actual variable and can be replaces with any word. we will see that later in this code
+typedef struct island{
+    char *name;
+    char *opens;
+    char *closes;
+    struct island *next;
+}island;
+
+
+
+
