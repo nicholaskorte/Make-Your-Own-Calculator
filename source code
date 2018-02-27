@@ -1,0 +1,46 @@
+#include <stdio.h>
+/*the library below is a library I created with some useful functions, to get the source code got the file named biglib.h in this
+repository. Also, for the library to work, you must also download the file named structs.h from this repository and store them in the
+same folder then you can run the code below.
+*/
+#include <biglib.h>
+
+int main(){
+    int x;
+    int y;
+    char op = 'r';
+    while(op != 'e'){
+    puts("What is the operation requested: Multiply[*], Divide[/], Add[+], Subtract[-], Modulo[%], or Exit[e]");
+    scanf("%s", &op);
+    puts("What is X");
+    scanf("%i", &x);
+    puts("What is Y");
+    scanf("%i", &y);
+
+    switch(op){
+case '*':
+    printf("%i * %i = %i\n", x, y, mult(x, y));
+    break;
+
+case '-':
+    printf("%i - %i = %i\n", x, y, sub(x, y));//the sub function (and the others) are not defined here, you can find them in the library
+    break;
+case '+':
+    printf("%i + %i = %i\n", x, y, add(x, y));
+    break;
+case '/':
+    printf("%i / %i = %i\n", x, y, divi(x, y));
+    break;
+case '%'://the % operator is called a modulo and return the value of the reaminder from 2 things being divided. ej. 4 % 3 = 1
+    printf("%i %% %i = %i\n", x, y, mod(x, y));
+    break;
+case 'e':
+    return 1;
+    break;
+default:
+    puts("It appears that's not an operation. Please try again\n");
+    break;
+    }
+}
+return 0;
+}
