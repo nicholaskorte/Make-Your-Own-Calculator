@@ -1,7 +1,7 @@
 #include <stdio.h>
-/*the library below is a library I created with some useful functions, to get the source code got the file named biglib.h in this
-repository. Also, for the library to work, you must also download the file named structs.h from this repository and store them in the
-same folder then you can run the code below.
+/*the library below is a library I created with some useful functions, to get the source code got the file named biglib in this
+repository. Also, for the library to work, you must also download the file named structs from this repository and store them in the
+same folder as .h files then you can run the code below.
 */
 #include <biglib.h>
 
